@@ -48,6 +48,7 @@ function App() {
 
             <Container>
               <Routes>
+                <Route path='/deployEcommerceWebUI' element={<Products />} />
                 <Route path='/' element={<Products />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
