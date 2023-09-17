@@ -72,7 +72,7 @@ const Register = () => {
 
     return (
         <>
-            <h1 className="text-center text-success">Đăng ký người dùng</h1>
+            <h1 className="text-center text-success">ĐĂNG KÝ NGƯỜI DÙNG</h1>
 
             {err?<ErrorAlert err={err} />:""}
             <Form onSubmit={register}>
