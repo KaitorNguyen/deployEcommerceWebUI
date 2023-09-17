@@ -17,13 +17,13 @@ const Login = () => {
     const login = (evt) => {
         evt.preventDefault()
 
-        const process = async () => {
+        const processLogin = async () => {
             try {
                 let res = await API.post(endpoints['login'], {
                     "username": username,
                     "password": password,
-                    "client_id": "dOpYblCChifIEB47b9RvjwZMhHWoNPKYjuy8z3gO",
-                    "client_secret": "w1MJRLnuePGEanPq45KzQysE0odalmdS3aEAv5TaO2uDQb6FIHYbimvklQWdfZdKhVyItJvNz1E19RRsvWVCHrDNvHJc4CAYpA5v2tiih6KrT2sImiJTU0QvL5vTIpiI",
+                    "client_id": process.env.REACT_APP_CLIENT_ID,
+                    "client_secret": process.env.REACT_APP_CLIENT_SECRET,
                     "grant_type": "password"
                 })
     
@@ -48,7 +48,7 @@ const Login = () => {
             setErr("Phải nhập username và password")
         else {
             setLoading(true)
-            process()
+            processLogin()
         }
     }
 
